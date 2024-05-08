@@ -148,11 +148,11 @@ func (ie *InfixExpression) TokenLiteral() string {
 func (ie *InfixExpression) String() string {
 	var out bytes.Buffer
 
-	out.WriteString(")")
+	out.WriteString("(")
 	out.WriteString(ie.Left.String())
 	out.WriteString(" " + ie.Operator + " ")
 	out.WriteString(ie.Right.String())
-	out.WriteString("(")
+	out.WriteString(")")
 
 	return out.String()
 }
