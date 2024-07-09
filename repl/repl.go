@@ -28,7 +28,6 @@ const MONKEY_FACE = `            __,__
 func Start(in io.Reader, out io.Writer) {
 	scanner := bufio.NewScanner(in)
 	env := object.NewEnvironment()
-	macroEnv := object.NewEnvironment()
 
 	for {
 		fmt.Fprint(out, PROMPT)
@@ -47,9 +46,7 @@ func Start(in io.Reader, out io.Writer) {
 			continue
 		}
 
-		evaluator.DefineMacros(program, macroEnv)
-		expanded := evaluator.ExpandMacros(program, macroEnv)
-		evaluated := evaluator.Eval(expanded, env)
+		evaluated := evaluator.Eval(program, env)
 		if evaluated != nil {
 			io.WriteString(out, string(evaluated.Inspect()))
 			io.WriteString(out, "\n")
