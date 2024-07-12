@@ -1,1 +1,1 @@
-Working through the book [Writing An Interpreter In Go](https://interpreterbook.com/) by Thorsten Ball.
+Working through the book [Writing A Compiler In Go](https://compilerbook.com/) by Thorsten Ball.
